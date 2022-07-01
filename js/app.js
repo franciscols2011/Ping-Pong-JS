@@ -24,12 +24,14 @@ class BoardView{
     }
     play(){
         if(this.board.playing){
-            this.clean()    
+            this.clean();    
             this.draw();
+            this.check_collision();
             this.check_point();
             this.board.ball.move();
     }
 }
+
 clean(){
     this.context.clearRect(0,0,board.width, board.height);
 }
@@ -61,7 +63,7 @@ check_point(){
     var b = this.board.ball;
     if(parseInt(b.x) < 0 ){
         var puntajeDer = document.getElementById("puntajeDer").innerHTML;
-        if(puntajeDer == 7){
+        if(puntajeDer == 5){
             finishGame();
         }
     else{
@@ -70,14 +72,34 @@ check_point(){
     }
 }else if(parseInt(b.x) > this.board.width) {
     var puntajeIzq = document.getElementById("puntajeIzq").innerHTML;
-    if(puntajeIzq == 7){
+    if(puntajeIzq == 5){
         finishGame();
     }else{
             document.getElementById("puntajeIzq").innerHTML = (parseInt(puntajeIzq) + 1);
+            resetPoint();
             }
         }
     }
+
+    check_collision(){
+        
+        var b = this.board.ball;
+
+        if((b.y - b.radius) < 0 || b.y + b.radius > this.board.height){
+            b.speed_y *= -1;
+            if((Math.random() * 100) >50){
+            }
+        }
+        for(var i = this.board.bars.length - 1; i >= 0; i--){
+            var bar = this.board.bars[i];
+            if(hit(bar, this.board.ball)){
+                if((Math.random() * 100) > 50)
+            }
+        }
+        this.board.ball.collision(bar);
+    }
 }
+
 
 function hit(a, b){
     var hit = false;
@@ -114,7 +136,7 @@ class Bar{
         this.y -= this.speed;
     }
     toString(){
-        return "| x: " + this.x + "| | y: "+this.y+" |";
+        return "| x: " + this.x + "| | y: "+ this.y +" |";
     }
 }
 
@@ -194,29 +216,29 @@ document.addEventListener("keydown", function(event){
 
 function finishGame(){
     board.playing = false;
-    var marcadorIzq = document.getElementById("puntajeIzq").innerHTML;
-    var marcadorDer = document.getElementById("puntajeDer").innerHTML;
+    var resIzq = document.getElementById("puntajeIzq").innerHTML;
+    var resDer = document.getElementById("puntajeDer").innerHTML;
     document.getElementById("puntajeDer").innerHTML = 0;
     document.getElementById("puntajeIzq").innerHTML = 0;
-    if(marcadorIzq > marcadorDer)
-        marcadorIzq++;
+    if(resIzq > resDer)
+        resIzq++;
     else
-        marcadorDer++;
-    document.getElementById("juegoTerminado").style.display = "flex";
+        resDer++;
+    document.getElementById("modalFinish").innerHTML =style.display = "flex";
     document.getElementById("resultadoDer").innerHTML = marcadorDer;
     document.getElementById("resultadoIzq").innerHTML = marcadorIzq; 
 }
 
 function resetGame(){
-    document.getElementById("juegoTerminado").style.display = "none";
+    document.getElementById("modalFinish").style.display = "none";
     board.playing = false;
     ball.x = 350;
     ball.y = 100;
     ball.direction = 1;
     ball.bounce_angle = 0;
     ball.max_bounce_angle = Math.PI / 12;
-    ball.speed_x = 10;
     ball.speed_y = 2;
+    ball.speed_x = 10;
     ball.speed = 10;
     barIzq.x = 10;
     barIzq.y = (this.board.height / 2) - 50;
