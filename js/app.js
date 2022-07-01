@@ -160,3 +160,35 @@ class Ball {
     }
 }
 
+var board = new Board(1000, 500);
+var canvas = document.getElementById("canvas");
+var barIzq = new Bar(10, (this.board.height / 2) - 50, 40, 100, board);
+var barDer = new Bar(this.board.width - 50, (this.board.height / 2) - 50, 40, 100, board);
+var board_view = new BoardView(canvas, board);
+var ball = new Ball(350, 100, 10, board);
+
+board_view.draw();
+windows.requestAnimationFrame(controller);
+
+
+document.addEventListener("keydown", function(event){
+    if(event.keyCode == 38){
+        event.preventDefault();
+        barDer.up();
+    }else if(event.keyCode == 40){
+        event.preventDefault();
+        barDer.down();
+    }else if(event.keyCode == 87){
+        event.preventDefault();
+        barIzq.up();
+    }else if(event.keyCode == 83){
+        event.preventDefault();
+        barIzq.down();
+    }else if (event.keyCode == 32){
+        event.preventDefault();
+        board.playing = !board.playing;
+    }else if(event.keyCode == 82){
+        event.preventDefault();
+        resetGame();
+    }
+});
