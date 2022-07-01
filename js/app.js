@@ -67,12 +67,8 @@ class BoardView {
     if (parseInt(b.x) < 0) {
       var puntajeDer = document.getElementById("puntajeDer").innerHTML;
       if (puntajeDer == 5) {
-        const music = new Audio("static/sound/3.wav");
-        music.play();
         finishGame();
       } else {
-        const music = new Audio("static/sound/3.wav");
-        music.play();
         document.getElementById("puntajeDer").innerHTML =
           parseInt(puntajeDer) + 1;
         resetPoint();
@@ -80,12 +76,8 @@ class BoardView {
     } else if (parseInt(b.x) > this.board.width) {
       var puntajeIzq = document.getElementById("puntajeIzq").innerHTML;
       if (puntajeIzq == 5) {
-        const music = new Audio("static/sound/3.wav");
-        music.play();
         finishGame();
       } else {
-        const music = new Audio("static/sound/3.wav");
-        music.play();
         document.getElementById("puntajeIzq").innerHTML =
           parseInt(puntajeIzq) + 1;
         resetPoint();
@@ -94,7 +86,6 @@ class BoardView {
   }
 
   check_collision() {
-    var music;
     var b = this.board.ball;
     if (b.y - b.radius < 0 || b.y + b.radius > this.board.height) {
       b.speed_y *= -1;
