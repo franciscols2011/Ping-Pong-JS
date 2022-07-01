@@ -26,7 +26,6 @@ class BoardView{
         if(this.board.playing){
             this.clean()    
             this.draw();
-            this.check_collision();
             this.check_point();
             this.board.ball.move();
     }
@@ -116,6 +115,23 @@ class Bar{
     }
     toString(){
         return "| x: " + this.x + "| | y: "+this.y+" |";
+    }
+}
+
+class Ball {
+    constructor(x, y, radius, board){
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.board = board;
+        this.speed_y = 2;
+        this.speed_x = 10;
+        this.direction = 1;
+        this.bounce_angle = 0;
+        this.max_bounce_angle = Math.PI / 12;
+        this.kind = "circle";
+        this.speed = 10;
+        board.ball = this;
     }
 }
 
