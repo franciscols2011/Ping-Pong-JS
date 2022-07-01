@@ -192,3 +192,18 @@ document.addEventListener("keydown", function(event){
         resetGame();
     }
 });
+
+function finishGame(){
+    board.playing = false;
+    var marcadorIzq = document.getElementById("puntajeIzq").innerHTML;
+    var marcadorDer = document.getElementById("puntajeDer").innerHTML;
+    document.getElementById("puntajeDer").innerHTML = 0;
+    document.getElementById("puntajeIzq").innerHTML = 0;
+    if(marcadorIzq > marcadorDer)
+        marcadorIzq++;
+    else
+        marcadorDer++;
+    document.getElementById("juegoTerminado").style.display = "flex";
+    document.getElementById("resultadoDer").innerHTML = marcadorDer;
+    document.getElementById("resultadoIzq").innerHTML = marcadorIzq; 
+}
