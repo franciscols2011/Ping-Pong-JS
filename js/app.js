@@ -168,8 +168,7 @@ var board_view = new BoardView(canvas, board);
 var ball = new Ball(350, 100, 10, board);
 
 board_view.draw();
-windows.requestAnimationFrame(controller);
-
+window.requestAnimationFrame(controller);
 
 document.addEventListener("keydown", function(event){
     if(event.keyCode == 38){

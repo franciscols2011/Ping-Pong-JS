@@ -1,3 +1,102 @@
-#canvas{
-    border: solid;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to left top, #460853, #932751, #c2634b,#d4a85a, #d1ec95);
+}
+h1 {
+    font-size: 72px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+#juego {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#juego h1 {
+    margin: 0 !important;
+    padding: 5px 30px;
+    border: 2px solid green;
+    background: cadetblue;
+}
+canvas{
+    border: 7px solid white ;
+    margin: 30px 30px;
+    background-image: url(/img/FONDO.png);
+}
+
+#juegoTerminado{
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+#juegoTerminado .reiniciarJuego {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 500px;
+    background-color: aquamarine;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+#juegoTerminado .cerrarJuego {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    font-size: 72px;
+    font-weight: bold;
+    color: lightskyblue;
+    transition: 0.5s;
+    background: none !important;
+    border: none !important;
+}
+#juegoTerminado #reiniciarJuego:hover {
+    cursor: pointer;
+    filter: brightness(2);
+    -webkit-filter: brightness(2);
+}
+
+#juegoTerminado h1 {
+    margin: 0;
+    text-transform: uppercase;
+    color: #932751;
+    font-size: 72px;
+}
+
+#juegoTerminado .resultado {
+    padding: 10px 150px;
+    margin: 20px;
+    border: 2px solid white;
+    background-color: #d4a85a;
 }
