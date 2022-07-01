@@ -207,3 +207,24 @@ function finishGame(){
     document.getElementById("resultadoDer").innerHTML = marcadorDer;
     document.getElementById("resultadoIzq").innerHTML = marcadorIzq; 
 }
+
+function resetGame(){
+    document.getElementById("juegoTerminado").style.display = "none";
+    board.playing = false;
+    ball.x = 350;
+    ball.y = 100;
+    ball.direction = 1;
+    ball.bounce_angle = 0;
+    ball.max_bounce_angle = Math.PI / 12;
+    ball.speed_x = 10;
+    ball.speed_y = 2;
+    ball.speed = 10;
+    barIzq.x = 10;
+    barIzq.y = (this.board.height / 2) - 50;
+    barDer.x = this.board.width - 50;
+    barDer.y = (this.board.heigt / 2) - 50;
+    board_view.clean();
+    board_view.draw();
+    document.getElementById("puntajeIzq").innerHTML = 0;
+    document.getElementById("puntajeDer").innerHTML = 0;
+}
