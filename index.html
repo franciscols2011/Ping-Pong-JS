@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <title>PingPong - Francisco Lopez</title>
-</head>
-<body>
+  </head>
+  <body>
     <section id="container">
-        <h1>PING PONG</h1>    
-    <div id="juego">
-        <h1 id = "puntajeIzq">0</h1>
+      <h1>PING PONG</h1>
+      <div id="juego">
+        <h1 id="puntajeIzq">0</h1>
         <canvas id="canvas"></canvas>
         <h1 id="puntajeDer">0</h1>
-    </div>
-    <script src="/js/app.js"></script>
-</section>
+      </div>
+      <script src="/js/app.js"></script>
+    </section>
 
-
-
-<section id = "modalFinish">
-    <div class="contenidoModal">
+    <section id="modalFinish">
+      <div class="contenidoModal">
         <button id="closeModal" onclick="resetGame()">&times;</button>
         <h1>Juego terminado.</h1>
-        <h1 class="resultado"><span id = "resultadoIzq">0</span> - <span id="resultadoDer">0</span></h1>
-    </div>
-</section>
-</body>
+        <h1 class="resultado">
+          <span id="resultadoIzq">0</span> - <span id="resultadoDer">0</span>
+        </h1>
+      </div>
+    </section>
+  </body>
 </html>

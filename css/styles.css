@@ -1,102 +1,102 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: skyblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: skyblue;
 }
 h1 {
-    font-size: 72px;
-    font-weight: bold;
-    margin-bottom: 50px;
+  font-size: 72px;
+  font-weight: bold;
+  margin-bottom: 50px;
 }
 #juego {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 #juego h1 {
-    margin: 0 !important;
-    padding: 5px 30px;
-    border: 2px solid green;
-    background: cadetblue;
+  margin: 0 !important;
+  padding: 5px 30px;
+  border: 2px solid green;
+  background: cadetblue;
 }
-canvas{
-    border: 7px solid white ;
-    margin: 30px 30px;
-    background-image: url(/img/FONDO.png);
+canvas {
+  border: 7px solid white;
+  margin: 30px 30px;
+  background-image: url(/img/FONDO.png);
 }
 
-#modalFinish{
-    position: absolute;
-    display: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    transition: 1s;
-    -webkit-transition: 1s;
-    -moz-transition: 1s;
-    -ms-transition: 1s;
-    -o-transition: 1s;
+#modalFinish {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
 }
 #modalFinish .contenidoModal {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 600px;
-    height: 500px;
-    background-color: aquamarine;
-    border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    -ms-border-radius: 16px;
-    -o-border-radius: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 500px;
+  background-color: aquamarine;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
 }
 #modalFinish #closeModal {
-    position: absolute;
-    right: 20px;
-    top: 5px;
-    font-size: 72px;
-    font-weight: bold;
-    color: lightskyblue;
-    transition: 0.5s;
-    background: none !important;
-    border: none !important;
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  font-size: 72px;
+  font-weight: bold;
+  color: lightskyblue;
+  transition: 0.5s;
+  background: none !important;
+  border: none !important;
 }
 #modalFinish #closeModal:hover {
-    cursor: pointer;
-    filter: brightness(2);
-    -webkit-filter: brightness(2);
+  cursor: pointer;
+  filter: brightness(2);
+  -webkit-filter: brightness(2);
 }
 
 #modalFinish h1 {
-    margin: 0;
-    text-transform: uppercase;
-    color: #932751;
-    font-size: 72px;
+  margin: 0;
+  text-transform: uppercase;
+  color: #932751;
+  font-size: 72px;
 }
 
 #modalFinish .resultado {
-    padding: 10px 150px;
-    margin: 20px;
-    border: 2px solid white;
-    background-color: #d4a85a;
+  padding: 10px 150px;
+  margin: 20px;
+  border: 2px solid white;
+  background-color: #d4a85a;
 }
