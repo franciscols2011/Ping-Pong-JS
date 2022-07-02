@@ -274,3 +274,4 @@ function controller() {
   board_view.play();
   window.requestAnimationFrame(controller);
 }
+s;
